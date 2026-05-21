@@ -1,0 +1,226 @@
+# Task manifest — single source of truth for task ordering and categorization.
+#
+# • Tasks are grouped by category. The category key is the canonical category name.
+# • Within each category, new tasks should be appended to the end of the list.
+# • The task ID must match the filename (without .md) in this directory.
+# • A CI lint check verifies that every task_*.md file appears in exactly one
+#   category and every entry here has a corresponding file.
+#
+# The `run_first` list contains tasks that must execute before all others
+# (in the order listed), regardless of which category they belong to.
+#
+# The `core` list defines a smaller subset of representative tasks for quick
+# benchmark runs. Use --core flag to run only these tasks. Selection criteria:
+# - At least one task per category
+# - Prefer automated grading for speed
+# - Include a mix of difficulty levels
+# - Cover key capability areas
+
+run_first:
+  - task_sanity
+
+# Core tasks (~25) for quick benchmark runs. ~20% of full suite.
+# Run with: benchmark.py --core
+core:
+  # productivity (2)
+  - task_sanity          # automated - baseline/smoke test
+  - task_calendar        # automated - tool use
+  # research (2)
+  - task_stock           # automated - web search
+  - task_market_research # hybrid - deeper research
+  # writing (2)
+  - task_email           # llm_judge - short form
+  - task_humanizer       # hybrid - text transformation
+  # coding (3)
+  - task_weather         # automated - simple coding
+  - task_shell_command_generator  # automated - command gen
+  - task_multi_file_refactoring   # automated - code changes
+  # analysis (2)
+  - task_summary         # llm_judge - comprehension
+  - task_spreadsheet_summary      # hybrid - data analysis
+  # csv_analysis (2)
+  - task_csv_stock_trend          # hybrid - time series
+  - task_csv_iris_summary         # hybrid - stats
+  # log_analysis (2)
+  - task_log_apache_top_errors    # hybrid - pattern finding
+  - task_log_syslog_boot          # hybrid - system logs
+  # meeting_analysis (2)
+  - task_meeting_tldr             # hybrid - summarization
+  - task_meeting_council_votes    # hybrid - extraction
+  # memory (1)
+  - task_memory          # automated - memory ops
+  # skills (2)
+  - task_files           # automated - file ops
+  - task_skill_search    # automated - skill discovery
+  # integrations (1)
+  - task_gws_email_triage         # hybrid - integration test
+
+categories:
+  productivity:
+    - task_sanity
+    - task_calendar
+    - task_pdf_to_calendar
+    - task_todo_list_cleanup
+    - task_daily_summary
+    - task_email_triage
+    - task_cron_organizer
+    - task_subway_navigation
+
+  research:
+    - task_stock
+    - task_events
+    - task_market_research
+    - task_polymarket_briefing
+    - task_executive_lookup
+    - task_deep_research
+    - task_competitive_research
+    - task_oss_alternative_research
+    - task_pricing_research
+    - task_it_procurement
+    - task_eu_regulation_research
+    - task_byok_best_practices
+
+  writing:
+    - task_blog
+    - task_email
+    - task_email_reply_drafting
+    - task_humanizer
+    - task_commit_message_writer
+    - task_readme_generation
+
+  coding:
+    - task_weather
+    - task_shell_command_generator
+    - task_multi_file_refactoring
+    - task_dockerfile_optimization
+    - task_playwright_e2e
+    - task_git_rescue_recovery
+    - task_cicd_pipeline_debug
+    - task_test_generation
+    - task_k8s_debugging
+    - task_selector_fix
+    - task_codebase_navigation
+    - task_browser_automation
+    - task_video_transcript_extraction
+    - task_iterative_code_refine
+
+  analysis:
+    - task_summary
+    - task_spreadsheet_summary
+    - task_eli5_pdf_summary
+    - task_openclaw_comprehension
+    - task_email_search
+    - task_access_log_anomaly
+    - task_financial_ratio_calculation
+    - task_earnings_analysis
+    - task_contract_analysis
+    - task_image_identification
+    - task_cve_security_triage
+    - task_session_chain_analysis
+
+  csv_analysis:
+    - task_csv_stock_trend
+    - task_csv_stock_volatility
+    - task_csv_stock_best_worst
+    - task_csv_finance_report
+    - task_csv_temp_anomalies
+    - task_csv_temp_trend
+    - task_csv_temp_decades
+    - task_csv_life_exp_ranking
+    - task_csv_life_exp_outliers
+    - task_csv_life_exp_change
+    - task_csv_gdp_ranking
+    - task_csv_gdp_per_capita
+    - task_csv_gdp_regions
+    - task_csv_stations_by_elevation
+    - task_csv_stations_coverage
+    - task_csv_stations_filter
+    - task_csv_iris_summary
+    - task_csv_iris_classify
+    - task_csv_iris_outliers
+    - task_csv_cities_ranking
+    - task_csv_cities_filter
+    - task_csv_cities_density
+    - task_csv_cities_growth
+    - task_csv_pension_ranking
+    - task_csv_pension_liability
+    - task_csv_pension_risk
+
+  log_analysis:
+    - task_log_apache_client_issues
+    - task_log_apache_top_errors
+    - task_log_apache_error_summary
+    - task_log_apache_critical
+    - task_log_apache_timeline
+    - task_log_syslog_boot
+    - task_log_nginx_status_codes
+    - task_log_nginx_traffic
+    - task_log_nginx_slow_requests
+    - task_log_nginx_user_agents
+    - task_log_nginx_errors
+    - task_log_ssh_failed_logins
+    - task_log_ssh_brute_force
+    - task_log_ssh_successful
+    - task_log_ssh_user_activity
+    - task_log_ssh_unusual_times
+    - task_log_hdfs_failures
+    - task_log_hdfs_connections
+    - task_log_hdfs_slow_ops
+    - task_log_hdfs_block_ops
+    - task_log_hdfs_storage
+    - task_log_mapreduce_jobs
+    - task_log_mapreduce_failures
+    - task_log_mapreduce_slow_tasks
+    - task_log_mapreduce_resources
+    - task_log_mapreduce_timeline
+    - task_log_syslog_anomalies
+    - task_log_syslog_services
+    - task_log_syslog_cron
+    - task_log_syslog_auth_failures
+
+  meeting_analysis:
+    - task_meeting_council_votes
+    - task_meeting_council_public_comment
+    - task_meeting_council_budget
+    - task_meeting_council_upcoming
+    - task_meeting_council_contact_info
+    - task_meeting_council_neighborhood
+    - task_meeting_tech_action_items
+    - task_meeting_tech_decisions
+    - task_meeting_tech_competitors
+    - task_meeting_tech_messaging
+    - task_meeting_tech_product_features
+    - task_meeting_advisory_attendees
+    - task_meeting_advisory_stakeholders
+    - task_meeting_advisory_technical
+    - task_meeting_advisory_timeline
+    - task_meeting_advisory_acronyms
+    - task_meeting_executive_summary
+    - task_meeting_sentiment_analysis
+    - task_meeting_follow_up_email
+    - task_meeting_blog_post
+    - task_meeting_tldr
+    - task_meeting_searchable_index
+    - task_meeting_gov_speaker_summary
+    - task_meeting_gov_qa_extract
+    - task_meeting_gov_recommendations
+    - task_meeting_gov_data_sources
+    - task_meeting_gov_controversy
+    - task_meeting_gov_next_steps
+
+  memory:
+    - task_memory
+    - task_second_brain
+
+  skills:
+    - task_files
+    - task_workflow
+    - task_clawdhub
+    - task_skill_search
+    - task_image_gen
+    - task_gh_issue_triage
+
+  integrations:
+    - task_gws_email_triage
+    - task_gws_cross_service
+    - task_gws_task_management

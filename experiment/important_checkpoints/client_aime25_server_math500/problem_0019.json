@@ -1,0 +1,7 @@
+{
+  "problem": "The product\\[\\prod^{63}_{k=4} \frac{\\log_k (5^{k^2 - 1})}{\\log_{k + 1} (5^{k^2 - 4})} = \frac{\\log_4 (5^{15})}{\\log_5 (5^{12})} \\cdot \frac{\\log_5 (5^{24})}{\\log_6 (5^{21})}\\cdot \frac{\\log_6 (5^{35})}{\\log_7 (5^{32})} \\cdots \frac{\\log_{63} (5^{3968})}{\\log_{64} (5^{3965})}\\]is equal to $\\tfrac mn,$ where $m$ and $n$ are relatively prime positive integers. Find $m + n.$",
+  "problem_id": "18",
+  "behavior_book": {
+    "skill_name": "skill_logarithmicSimplificationDescription"
+  }
+}

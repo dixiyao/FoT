@@ -1,0 +1,7 @@
+{
+  "problem": "Let ${\\triangle ABC}$ be a right triangle with $\\angle A = 90^\\circ$ and $BC = 38.$ There exist points $K$ and $L$ inside the triangle such\\[AK = AL = BK = CL = KL = 14.\\]The area of the quadrilateral $BKLC$ can be expressed as $n\\sqrt3$ for some positive integer $n.$ Find $n.$",
+  "problem_id": "28",
+  "behavior_book": {
+    "skill_description": "When to use: Coordinate geometry is applicable whenever geometric figures are described analytically, allowing translation of geometric problems into algebraic forms for systematic solutions. This skill is especially useful when calculating areas, distances, midpoints, slopes, and intersections of geometric entities. Step-by-step: 1) Assign a coordinate system to the problem, typically placing key points at convenient locations like the origin. 2) Represent all relevant points, lines, or shapes with their respective coordinate representations, utilizing ordered pairs (x, y) for planar figures. 3) Translate geometric relationships, such as distances, slopes, angles, or intersections, into algebraic equations or inequalities. 4) Solve the resultant algebraic equations to derive required measurements or relations. 5) Interpret the algebraic solutions in geometric terms to answer the original question. Key insights: Coordinate geometry bridges algebra and geometry, enabling precise calculations through analytical methods. It is particularly powerful for planar problems with straight edges or constant gradients, but can also approximate curved geometries with sufficient resolution."
+  }
+}

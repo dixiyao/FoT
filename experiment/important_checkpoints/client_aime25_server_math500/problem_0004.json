@@ -1,0 +1,7 @@
+{
+  "problem": "Find the number of ordered pairs $(x,y)$, where both $x$ and $y$ are integers between $-100$ and $100$ inclusive, such that $12x^2-xy-6y^2=0$.",
+  "problem_id": "3",
+  "behavior_book": {
+    "skill_quadraticEquationSolutionTechnique": "When to use: When solving quadratic equations in one variable where the equation can be rewritten to isolate the variable on one side. Step-by-step: 1) Rearrange the equation so that all terms are moved to one side, leaving zero on the other side. 2) Identify the coefficients a, b, and c in the quadratic equation ax² + bx + c = 0. 3) Apply the quadratic formula: x = (-b ± √(b² - 4ac)) / (2a). 4) Compute the discriminant (b² - 4ac) to determine the nature of the roots. 5) Take the square root of the discriminant, handling both real and complex cases. 6) Divide by 2a to find the solutions. 7) Simplify the solutions, rationalizing denominators if necessary, and present them in the simplest form. Key insights: The quadratic formula provides exact solutions for any quadratic equation, making it a reliable method. It handles all cases, including no real solutions when the discriminant is negative. Always double-check substitutions and arithmetic to avoid calculation errors."
+  }
+}

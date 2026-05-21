@@ -1,0 +1,563 @@
+<div align="center">
+
+# ClawBench
+
+[![arXiv](https://img.shields.io/badge/arXiv-2604.08523-B31B1B?style=flat-square&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2604.08523)
+[![HF Daily Paper](https://img.shields.io/badge/Daily_Paper-FFD21E?style=flat-square&logo=huggingface&logoColor=000)](https://huggingface.co/papers/2604.08523)
+[![HF Dataset](https://img.shields.io/badge/Dataset-FFD21E?style=flat-square&logo=huggingface&logoColor=000)](https://huggingface.co/datasets/NAIL-Group/ClawBench)
+[![Project Page](https://img.shields.io/badge/claw--bench.com-4F46E5?style=flat-square&logo=googlechrome&logoColor=white)](https://claw-bench.com)
+[![GitHub stars](https://img.shields.io/github/stars/reacher-z/ClawBench?style=flat-square&logo=github&color=181717&cacheSeconds=300)](https://github.com/reacher-z/ClawBench)
+
+<a href="#-手动快速开始"><img src="https://img.shields.io/badge/%E4%B8%80%E9%94%AE%E5%90%AF%E5%8A%A8-4F46E5?style=for-the-badge&labelColor=4F46E5&logoColor=white&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMjYzLjQtMjdMMjc4LjIgOS44IDMxNSAyNC42YzMgMS4yIDUgNC4yIDUgNy40cy0yIDYuMi01IDcuNEwyNzguMiA1NC4yIDI2My40IDkxYy0xLjIgMy00LjIgNS03LjQgNXMtNi4yLTItNy40LTVMMjMzLjggNTQuMiAxOTcgMzkuNGMtMy0xLjItNS00LjItNS03LjRzMi02LjIgNS03LjRMMjMzLjggOS44IDI0OC42LTI3YzEuMi0zIDQuMi01IDcuNC01czYuMiAyIDcuNCA1ek0xMTAuNyA0MS43bDIxLjUgNTAuMSA1MC4xIDIxLjVjNS45IDIuNSA5LjcgOC4zIDkuNyAxNC43cy0zLjggMTIuMi05LjcgMTQuN2wtNTAuMSAyMS41LTIxLjUgNTAuMWMtMi41IDUuOS04LjMgOS43LTE0LjcgOS43cy0xMi4yLTMuOC0xNC43LTkuN0w1OS44IDE2NC4yIDkuNyAxNDIuN0MzLjggMTQwLjIgMCAxMzQuNCAwIDEyOHMzLjgtMTIuMiA5LjctMTQuN0w1OS44IDkxLjggODEuMyA0MS43QzgzLjggMzUuOCA4OS42IDMyIDk2IDMyczEyLjIgMy44IDE0LjcgOS43ek00NjQgMzA0YzYuNCAwIDEyLjIgMy44IDE0LjcgOS43bDIxLjUgNTAuMSA1MC4xIDIxLjVjNS45IDIuNSA5LjcgOC4zIDkuNyAxNC43cy0zLjggMTIuMi05LjcgMTQuN2wtNTAuMSAyMS41LTIxLjUgNTAuMWMtMi41IDUuOS04LjMgOS43LTE0LjcgOS43cy0xMi4yLTMuOC0xNC43LTkuN2wtMjEuNS01MC4xLTUwLjEtMjEuNWMtNS45LTIuNS05LjctOC4zLTkuNy0xNC43czMuOC0xMi4yIDkuNy0xNC43bDUwLjEtMjEuNSAyMS41LTUwLjFjMi41LTUuOSA4LjMtOS43IDE0LjctOS43ek00NjAgMGMxMSAwIDIxLjYgNC40IDI5LjUgMTIuMmw0Mi4zIDQyLjNDNTM5LjYgNjIuNCA1NDQgNzMgNTQ0IDg0cy00LjQgMjEuNi0xMi4yIDI5LjVsLTg4LjIgODguMi0xMDEuMy0xMDEuMyA4OC4yLTg4LjJDNDM4LjQgNC40IDQ0OSAwIDQ2MCAwek00NC4yIDM5OC41TDMwOC40IDEzNC4zIDQwOS43IDIzNS42IDE0NS41IDQ5OS44QzEzNy42IDUwNy42IDEyNyA1MTIgMTE2IDUxMnMtMjEuNi00LjQtMjkuNS0xMi4yTDQ0LjIgNDU3LjVDMzYuNCA0NDkuNiAzMiA0MzkgMzIgNDI4czQuNC0yMS42IDEyLjItMjkuNXoiLz48L3N2Zz4=" alt="一键启动"></a>
+
+```bash
+uv tool install clawbench-eval && clawbench
+```
+
+<sub><i>安装 → 运行 → 搞定。&nbsp; 无需 API key。&nbsp; 无需下载数据集。&nbsp; 无需手动配置。</i></sub>
+
+### AI 智能体能完成日常在线任务吗?
+
+我们让 6 个前沿 AI 智能体去做人们每天都在做的事 --<br/>
+点外卖、订酒店、投简历、写评价、管理项目。<br/>
+**最强的模型也只完成了 33.3% 的任务。**
+
+---
+
+**153** 个日常任务 &nbsp;&middot;&nbsp; **144** 个真实网站 &nbsp;&middot;&nbsp; **15** 个生活类别
+
+<a href="README.md"><img src="static/icons/language.svg" width="16" height="16"> English</a>
+
+</div>
+
+<br/>
+
+<p align="center">
+<img src="static/icons/globe.svg" width="24" height="24">&nbsp;<b>真实网站</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="static/icons/cube.svg" width="24" height="24">&nbsp;<b>隔离容器</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="static/icons/shield-halved.svg" width="24" height="24">&nbsp;<b>请求拦截器</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="static/icons/layer-group.svg" width="24" height="24">&nbsp;<b>五层录制</b>
+</p>
+
+<br/>
+
+## 工作流程
+
+```
+   你选择一个任务             ClawBench 启动一个          智能体驱动浏览器:          拦截器捕获所有操作
+   来自 153 个真实             隔离的 Docker 容器          导航、填表、点击            并录制完整五层数据
+   日常场景                    + Chromium                                           
+                                                                                    
+   ┌──────────────┐           ┌──────────────┐           ┌──────────────┐           ┌──────────────┐
+   │ "在 Rover 上 │    ──►    │    容器      │    ──►    │   AI 智能体  │    ──►    │   五层数据   │
+   │  预订宠物    │           │  + Chromium  │           │  浏览真实    │           │   全部拦截   │
+   │  寄养"       │           │  + 智能体    │           │   网站       │           │   完整录制   │
+   └──────────────┘           └──────────────┘           └──────────────┘           └──────────────┘
+```
+
+<br/>
+
+# <img src="static/icons/robot.svg" width="28" height="28"> LLM 快速开始
+
+将你的编程智能体 (Claude Code, Cursor, Copilot 等) 指向 [`AGENTS.md`](AGENTS.md)，直接提问即可。
+
+<br/>
+
+# <img src="static/icons/person.svg" width="28" height="28"> 手动快速开始
+
+两条路任选一条 —— 最终都会打开同一个交互式 TUI。
+
+```bash
+# 方案 A —— 从 PyPI 安装（推荐大多数用户）
+uv tool install clawbench-eval && clawbench
+```
+
+```bash
+# 方案 B —— 克隆仓库（适合贡献者 / 改代码）
+git clone https://github.com/reacher-z/ClawBench.git && cd ClawBench && ./run.sh
+```
+
+**前置条件:** [Python 3.11+](https://python.org)、[uv](https://docs.astral.sh/uv/)，以及一个容器引擎 —— [Docker](https://www.docker.com/) **或** [Podman](https://podman.io/)。ClawBench 会自动检测已安装的那个；也可以用 `export CONTAINER_ENGINE=docker` 或 `export CONTAINER_ENGINE=podman` 强制指定。
+
+<details>
+<summary><b>安装 Docker 或 Podman</b> (macOS / Linux / Windows)</summary>
+
+#### macOS
+
+```bash
+# 方案 A —— Docker Desktop（最简单，带 GUI）
+brew install --cask docker
+open -a Docker                 # 启动后等任务栏的鲸鱼图标转完
+
+# 方案 B —— Podman（rootless，无 daemon，仅 CLI）
+brew install podman
+podman machine init            # 一次性：下载 Linux VM 镜像
+podman machine start           # 每次 podman 命令前必须先启动
+```
+
+> **macOS 上 Podman 需要 VM。** 只 `brew install podman` 是不够的 —— Podman 在 macOS 上靠一个小 Linux VM 来跑容器，装完必须跑一次 `podman machine init && podman machine start`，否则 `podman info` 会直接报 `Cannot connect to Podman`。
+
+#### Linux (Ubuntu / Debian)
+
+```bash
+# 方案 A —— Podman（默认 rootless，推荐）
+sudo apt update && sudo apt install -y podman
+
+# 方案 B —— Docker
+sudo apt install -y docker.io
+sudo usermod -aG docker $USER  # 登出再登入让 shell 拾取新组
+```
+
+> **Rootful Docker 文件归属坑：** 用 `sudo` 方式跑的 Docker，容器里产生的文件 `docker cp` 出来之后属主是 `root`，普通用户 `rm` 不动。ClawBench 驱动在每次运行后会检测到这个情况，自动 chown `test-output/` 回当前用户。如果你也会用其他容器工具并排跑，可以考虑 rootless Podman（或 rootless Docker）从根上避免这个问题。
+
+#### Windows
+
+```powershell
+# 方案 A —— Docker Desktop（WSL2 后端）
+winget install Docker.DockerDesktop
+# 然后从开始菜单启动 Docker Desktop，等它就绪
+
+# 方案 B —— Podman
+winget install RedHat.Podman
+podman machine init
+podman machine start
+```
+
+> 下面那些 `uv run …` 命令请从 **PowerShell**、**WSL2** 或 **Git Bash** 里跑。和 macOS 一样，Windows Podman 第一次用之前也必须 `podman machine init && podman machine start`。
+
+</details>
+
+**1. 配置模型** —— 一次性设置:
+```bash
+clawbench configure                # 用 $EDITOR 打开 models.yaml
+# PurelyMail 凭证（用于注册一次性邮箱）已经随 wheel 一起发布，开箱即用。
+# 想用自己的账号，跑 `clawbench configure --secrets` 覆盖即可。
+```
+
+> [!NOTE]
+> **首次运行会构建容器镜像**（chromium + ffmpeg + noVNC + Node + openclaw，大约 **2 GB** 下载，网速正常大概 **5–10 分钟**）。构建时会实时显示进度 spinner + 当前 step，后续运行直接走 layer 缓存，秒级完成。
+
+**2. 跑你的第一个任务** (三选一):
+
+> [!TIP]
+> **推荐 &rarr; 交互式 TUI** &nbsp; 引导式选择模型 + 测试用例
+> ```bash
+> clawbench
+> ```
+> 需要交互式终端。管道 / CI / 非 TTY 环境请直接用 `clawbench run` 或 `clawbench batch`。
+
+**(b) 指定模型跑单个任务:**
+```bash
+clawbench run 001-daily-life-food-uber-eats claude-sonnet-4-6
+```
+容器启动后,脚本会打印一个 **noVNC URL**（如 `http://localhost:6080/vnc.html`）—— 在浏览器中打开即可实时观看 agent 操作。如果 6080 端口被占用,会自动选一个空闲端口。
+
+结果落在 `./claw-output/<model>/<timestamp>-001-.../`,包含完整的五层录制。
+
+**(c) 通过 noVNC 手动控制浏览器** —— 产出人工参考轨迹:
+```bash
+clawbench run 001-daily-life-food-uber-eats --human
+```
+打开脚本打印的 noVNC URL,在浏览器里亲手完成任务,完事后关掉标签页。端口被占时会自动换一个。
+
+<details>
+<summary><b>从源码开发</b> &nbsp;— 克隆 + ``./run.sh``（面向贡献者）</summary>
+
+如果你要改 driver、bundled test-cases 或者容器构建本身，用源码 checkout 更合适。
+
+```bash
+git clone https://github.com/reacher-z/ClawBench.git && cd ClawBench
+cp models/models.example.yaml models/models.yaml   # 编辑：填入你的模型 API 密钥
+# `.env`（PurelyMail 凭证，用于一次性邮箱注册）已经随仓库提交，开箱即用。
+# 只有想覆盖默认值或添加 HF_TOKEN 时才需要编辑。
+./run.sh                                           # 交互式 TUI
+uv run claw-bench run \
+  test-cases/001-daily-life-food-uber-eats claude-sonnet-4-6   # 单个任务
+uv run claw-bench run \
+  test-cases/001-daily-life-food-uber-eats --human             # 人工参考
+```
+
+这条路径让你在 ``src/clawbench/``、``chrome-extension/``、``test-cases/`` 上实时改代码实时生效 —— 调 harness 本身的时候很顺手。其他场景用上面的 PyPI 安装就够快。
+
+</details>
+
+<br/>
+
+# <img src="static/icons/chart-bar.svg" width="28" height="28"> ClawBench-Lite
+
+**第一次跑？先跑这个。** [`test-cases/lite.json`](test-cases/lite.json) 是完整 153 任务的 **20 个精选子集**，按站点知名度、真实日常相关度、难度和类别多样性挑选。它对齐了 [browser-use/benchmark](https://github.com/browser-use/benchmark) 的 20-tasks-per-source 规范，用完整 benchmark 一小部分的成本就能拿到可信的信号。
+
+分层: **flagship 9 / core 8 / wildcard 3** —— 覆盖日常生活 (OpenTable, DoorDash, Instacart, TaskRabbit)、娱乐爱好 (Eventbrite, Goodreads, Fandango)、创建初始化 (Asana, Mailchimp, Squarespace)、旅行 (Airbnb)、教育 (LeetCode)、开发技术 (GitHub)、学术研究 (Overleaf)、个人管理 (1Password) 等类别。所有 Lite 任务均由 [`eval/agentic_eval.md`](eval/agentic_eval.md) 判定，不依赖 `url_pattern` 形态。
+
+完整 manifest 格式见 [`test-cases/lite.schema.json`](test-cases/lite.schema.json)；4 轴选择 rubric 与完整 swap history 见 `lite.json` 的 `notes` 字段。
+
+<br/>
+
+# <img src="static/icons/video.svg" width="28" height="28"> 教程
+
+<div align="center">
+
+<!-- TODO: 替换为实际视频链接 -->
+
+[![在 YouTube 观看](https://img.shields.io/badge/观看教程-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com)
+&nbsp;&nbsp;
+[![在 Bilibili 观看](https://img.shields.io/badge/观看教程-Bilibili-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white)](https://bilibili.com)
+
+</div>
+
+<br/>
+
+# <img src="static/icons/play.svg" width="28" height="28"> 演示
+
+<!-- TODO: 替换为实际的演示 GIF/录屏 -->
+
+<table>
+<tr>
+<td width="50%" align="center">
+
+**在 Uber Eats 上点餐**
+
+https://github.com/user-attachments/assets/placeholder-uber-eats
+
+</td>
+<td width="50%" align="center">
+
+**提交求职申请**
+
+https://github.com/user-attachments/assets/placeholder-greenhouse
+
+</td>
+</tr>
+</table>
+
+> 每次 ClawBench 运行都会产生完整的 MP4 录屏。访问[项目主页](https://claw-bench.com)查看全部 153 个任务的录屏。
+
+<br/>
+
+# <img src="static/icons/circle-question.svg" width="28" height="28"> 任务走读示例
+
+好奇一个任务从头到尾到底长什么样? 下面是 **001 号任务** 的完整走读。
+
+**任务定义** —— 来自 [`test-cases/001-daily-life-food-uber-eats/task.json`](test-cases/001-daily-life-food-uber-eats/task.json):
+
+```json
+{
+  "instruction": "On Uber Eats, order delivery: one Pad Thai, deliver to home address, note \"no peanuts\"",
+  "time_limit": 30,
+  "eval_schema": {
+    "url_pattern": "__PLACEHOLDER_WILL_NOT_MATCH__",
+    "method": "POST"
+  }
+}
+```
+
+智能体拿到的就是这段原文 `instruction`,另外有只读权限访问 `/my-info/alex_green_personal_info.json` (dummy user 的姓名、住址、电话、生日) 和一个一次性邮箱账号 (万一遇到强制登录)。它有 **30 分钟** 去触发一个 `POST` 请求,超时容器会被 kill。
+
+**智能体要做什么** (顺利路径下):
+
+1. 打开 `ubereats.com`
+2. 从 `/my-info/alex_green_personal_info.json` 读出 dummy user 的家庭住址,填入配送地址输入框
+3. 在菜品搜索框里搜 **"Pad Thai"**
+4. 挑一家能配送到这个地址且有 Pad Thai 的餐厅
+5. 进入菜品详情页,在定制或特殊说明字段里填 **"no peanuts"**
+6. 加一份到购物车,打开购物车,必要时用一次性邮箱凭据处理登录弹窗
+7. 进入 checkout,点 **Place Order**
+
+**拦截器抓到了什么** —— 最后的 *Place Order* 那一点会发起一个 `POST` 请求。ClawBench 的 request interceptor 架在浏览器和目标站之间,**会在请求到达 Uber Eats 服务器之前抓下来**,所以 dummy user 永远不会被真的扣款。拦截发生的那一瞬间,五层录制 (MP4 视频、PNG 截图、HTTP 流量、浏览器动作、智能体消息) 会被一起冻结到 `/data/`。
+
+**裁判怎么判 PASS / FAIL** —— 001 号任务的 `url_pattern` 是特意留的 sentinel `__PLACEHOLDER_WILL_NOT_MATCH__`,这意味着**没有任何请求路径能机械匹配**。判决完全由 [`eval/agentic_eval.md`](eval/agentic_eval.md) 里的 agentic judge 给出 —— 它把智能体的五层录制和人工参考轨迹对照,检查四件事:
+
+- 智能体有没有真正走到最后的 checkout?
+- 购物车里是不是**正好一份** Pad Thai (不是两份、也不是套餐)?
+- 配送地址是不是 `alex_green_personal_info.json` 里的家庭住址?
+- 订单的特殊说明字段里有没有 **"no peanuts"**?
+
+四条全满足才算 **PASS**,任何一条没达到就是 **FAIL**,而且失败证据会被绑定到对应的判据上。正是这种 per-task rubric 让 ClawBench 对裁判敏感而不是对 URL 正则敏感 —— 完整 rubric 格式见 [`eval/README.md`](eval/README.md),judge prompt 见 [`eval/agentic_eval.md`](eval/agentic_eval.md)。
+
+<br/>
+
+# <img src="static/icons/chart-bar.svg" width="28" height="28"> 实验结果
+
+<div align="center">
+
+**6 个前沿 AI 智能体在 ClawBench 上的成功率 (%)**
+
+</div>
+
+| 排名 | 模型 | 总体 | 日常 | 金融 | 工作 | 开发 | 学术 | 旅行 | 社交 | 宠物 |
+|:----:|-------|:------:|:-----:|:-----:|:----:|:---:|:----:|:----:|:----:|:----:|
+| 1 | **Claude Sonnet 4.6** | **33.3** | 44.2 | **50.0** | 19.0 | 11.1 | **50.0** | 23.1 | **38.9** | **18.2** |
+| 2 | GLM-5 | 24.2 | **30.8** | 16.7 | **38.1** | 16.7 | 28.6 | 0.0 | 16.7 | **18.2** |
+| 3 | Gemini 3 Flash | 19.0 | 15.4 | 33.3 | 23.8 | **22.2** | 28.6 | **30.8** | 11.1 | 0.0 |
+| 4 | Claude Haiku 4.5 | 18.3 | 15.4 | 22.2 | 19.0 | **27.8** | 21.4 | 7.7 | 16.7 | **18.2** |
+| 5 | GPT-5.4 | 6.5 | 9.6 | 0.0 | 0.0 | 11.1 | 7.1 | 7.7 | 0.0 | 9.1 |
+| 6 | Gemini 3.1 Flash Lite | 3.3 | 1.9 | 0.0 | 0.0 | 5.6 | 14.3 | 0.0 | 0.0 | 9.1 |
+
+<details>
+<summary><b>任务类别 (15 个类别, 153 个任务)</b></summary>
+
+| 类别 | 数量 | 示例平台 |
+|----------|:-----:|-------------------|
+| 日常生活 | 21 | Uber Eats, DoorDash, Instacart, Zillow, Craigslist |
+| 娱乐与爱好 | 15 | Ticketmaster, AMC Theatres, Topgolf, Crunchyroll |
+| 创建与初始化 | 13 | Squarespace, Wix, Webflow, Ghost, Substack |
+| 评分与投票 | 10 | Trustpilot, G2, Goodreads, RateMyProfessors |
+| 旅行 | 9 | Booking.com, Expedia, Airbnb, TripAdvisor |
+| 教育与学习 | 9 | Coursera, Udemy, Khan Academy, Duolingo |
+| 办公与秘书 | 9 | Google Calendar, Slack, Notion, Trello |
+| 美容与个护 | 9 | Sephora, Ulta, Glossier |
+| 求职与 HR | 8 | LinkedIn, Greenhouse, Lever, Workday |
+| 宠物与动物护理 | 8 | Chewy, Petco, Rover |
+| 个人管理 | 6 | Mint, YNAB, Todoist |
+| 购物与电商 | 6 | Amazon, eBay, Etsy, Target |
+| 非营利与慈善 | 6 | GoFundMe, DonorsChoose |
+| 学术与研究 | 5 | Google Scholar, Semantic Scholar, OpenReview |
+| 金融与投资 | 4 | Robinhood, Fidelity, Coinbase |
+| 其他 | 15 | 自动化、开发与技术、政府、家居服务、汽车 |
+
+</details>
+
+<br/>
+
+## 架构
+
+<details>
+<summary>容器内部结构</summary>
+
+```
+┌─────────────────────────────────────────────────┐
+│  容器 (Docker / Podman)                          │
+│                                                 │
+│  ┌───────────┐   DOM 事件    ┌──────────────┐   │
+│  │ content.js├──────────────►│ background.js│   │
+│  │ (每个标签)│               │  (service    │   │
+│  └───────────┘               │   worker)    │   │
+│                              └──┬──────┬────┘   │
+│                                 │      │        │
+│                            动作 │      │ 截图   │
+│                                 │      │        │
+│  ┌──────────┐            ┌──────▼──────▼────┐   │
+│  │  Xvfb    │◄──ffmpeg──►│  FastAPI Server  │   │
+│  │ :99      │  x11grab   │  :7878           │   │
+│  └──────────┘            └──────────────────┘   │
+│                                  │              │
+│  ┌──────────┐            ┌───────▼─────────┐    │
+│  │ Chromium │            │     /data       │    │
+│  │ :9222 CDP│            │  actions.jsonl  │    │
+│  └──────────┘            │  requests.jsonl │    │
+│                          │  screenshots/   │    │
+│                          │  recording.mp4  │    │
+│                          └─────────────────┘    │
+└─────────────────────────────────────────────────┘
+```
+
+</details>
+
+<br/>
+
+# <img src="static/icons/terminal.svg" width="28" height="28"> 命令行
+
+```bash
+# 交互式 TUI (推荐):
+./run.sh
+
+# 单次运行:
+uv run --project test-driver test-driver/run.py test-cases/001-daily-life-food-uber-eats claude-sonnet-4-6
+
+# 人工模式 (通过 noVNC 控制浏览器):
+uv run --project test-driver test-driver/run.py test-cases/001-daily-life-food-uber-eats --human
+
+# 批量运行 (所有模型 x 用例 1-50, 3 个并发):
+uv run --project test-driver test-driver/batch.py --all-models --case-range 1-50 --max-concurrent 3
+```
+
+完整 CLI 文档、批量运行参数、测试用例格式和输出结构详见 [test-driver/README.md](test-driver/README.md)。
+
+<br/>
+
+# <img src="static/icons/chart-bar.svg" width="28" height="28"> 测评
+
+测评是**运行之后**的步骤 -- 先运行智能体收集轨迹,再将轨迹与人类参考运行进行对比评估。
+
+```
+ 1. 运行智能体 (test-driver)        2. 测评 (eval/)
+ ────────────────────────           ────────────────────────────────
+ ./run.sh 或 batch.py        ──►    Claude Code 子代理对比
+ 生成 test-output/                  智能体 vs 人类轨迹
+   含五层录制数据                    按 eval/agentic_eval.md rubric 判定
+```
+
+测评器将智能体轨迹与人类参考轨迹在五层录制数据（视频、截图、HTTP 流量、浏览器动作、智能体消息）上进行逐步对比,输出 PASS/FAIL 及带证据的判定理由。
+
+完整测评指南和 Claude Code prompt 模板详见 [eval/README.md](eval/README.md)。
+
+<br/>
+
+# <img src="static/icons/circle-question.svg" width="28" height="28"> 常见问题
+
+<details>
+<summary><b>每次运行会产生什么数据?</b></summary>
+
+每次会话会在 `/data/` 下记录五层同步数据:
+
+| 层 | 文件 | 描述 |
+|-------|------|-------------|
+| 会话回放 | `recording.mp4` | 完整的会话视频 (H.264, 15fps) |
+| 动作截图 | `screenshots/*.png` | 每个浏览器动作的带时间戳 PNG |
+| 浏览器动作 | `actions.jsonl` | 每个 DOM 事件 (click, keydown, input, pageLoad, scroll 等) |
+| HTTP 流量 | `requests.jsonl` | 每个 HTTP 请求,包含 headers、body 和查询参数 |
+| 智能体消息 | `agent-messages.jsonl` | 完整的智能体对话记录 (思考、文本、工具调用) |
+
+拦截结果保存在 `interception.json` 中。
+
+</details>
+
+<details>
+<summary><b>请求拦截器如何工作?</b></summary>
+
+拦截器会阻止关键的、不可逆的 HTTP 请求 (结账、表单提交、邮件发送) 以防止真实副作用。它通过 CDP 的 `Fetch` 域连接到 Chrome,并将请求与评测 schema (`url_pattern` 正则 + `method` + 可选的 `body`/`params`) 进行匹配。命中时,它会将被阻止的请求保存到 `interception.json`,杀掉智能体并停止录制。
+
+拦截器**不**验证任务完成 -- 评测由独立的评估器在会话结束后处理。
+
+对于在支付墙后的任务 (智能体没有有效的信用卡),评测 schema 使用一个永不匹配的占位模式,因此会话会一直运行到超时。
+
+</details>
+
+<details>
+<summary><b>合成用户档案是什么?</b></summary>
+
+每个容器都有一个 `/my-info/` 目录,包含一个虚拟用户身份 (Alex Green): 个人信息 JSON、邮箱凭证和简历 PDF。邮箱是每次运行时新创建的一次性 PurelyMail 地址。智能体在需要填写表单、注册账号等时会读取这些文件。
+
+源模板: `shared/alex_green_personal_info.json` (档案) 和 `test-driver/resume_template.json` (简历)。
+
+</details>
+
+<details>
+<summary><b>可以用 Podman 代替 Docker 吗?</b></summary>
+
+可以。设置 `export CONTAINER_ENGINE=podman`。框架会自动检测可用的引擎。Podman 无需 root 权限。
+
+</details>
+
+<details>
+<summary><b>智能体可以使用哪些工具?</b></summary>
+
+OpenClaw 智能体只能使用浏览器工具和一组受限的只读 shell 命令 (`ls`、`cat`、`find`、`grep`、`head`、`tail`、`jq`、`wc` 等)。可能绕过浏览器的命令 (`curl`、`python`、`node`、`wget`) 会被阻止。智能体指令也明确要求只通过浏览器完成任务。
+
+</details>
+
+<details>
+<summary><b>如何添加新的测试用例?</b></summary>
+
+参见 [CONTRIBUTING.md](CONTRIBUTING.md)。简言之: 在 `test-cases/` 下创建目录,编写符合 `test-cases/task.schema.json` 的 `task.json`,定义评测 schema,用人工模式测试,然后提交 PR。
+
+</details>
+
+<br/>
+
+## 贡献
+
+我们欢迎贡献 -- 尤其是新的测试用例。详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+## 引用
+
+如果你在研究中使用了 ClawBench,请引用:
+
+```bibtex
+@misc{zhang2026clawbench,
+  title         = {ClawBench: Can AI Agents Complete Everyday Online Tasks?},
+  author        = {Yuxuan Zhang and Yubo Wang and Yipeng Zhu and Penghui Du and Junwen Miao and Xuan Lu and Wendong Xu and Yunzhuo Hao and Songcheng Cai and Xiaochen Wang and Huaisong Zhang and Xian Wu and Yi Lu and Minyi Lei and Kai Zou and Huifeng Yin and Ping Nie and Liang Chen and Dongfu Jiang and Wenhu Chen and Kelsey R. Allen},
+  year          = {2026},
+  eprint        = {2604.08523},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2604.08523}
+}
+```
+
+## 核心贡献者
+
+<table>
+<tr>
+<td align="center">
+<a href="https://github.com/reacher-z">
+<img src="https://github.com/reacher-z.png" width="80" height="80" style="border-radius:50%"><br/>
+<sub><b>Yuxuan Zhang</b></sub>
+</a>
+</td>
+<td align="center">
+<a href="https://github.com/Wyyyb">
+<img src="https://github.com/Wyyyb.png" width="80" height="80" style="border-radius:50%"><br/>
+<sub><b>Yubo Wang</b></sub>
+</a>
+</td>
+<td align="center">
+<a href="https://github.com/Perry2004">
+<img src="https://github.com/Perry2004.png" width="80" height="80" style="border-radius:50%"><br/>
+<sub><b>Perry Zhu</b></sub>
+</a>
+</td>
+<td align="center">
+<a href="https://github.com/eternaldolphin">
+<img src="https://github.com/eternaldolphin.png" width="80" height="80" style="border-radius:50%"><br/>
+<sub><b>Penghui Du</b></sub>
+</a>
+</td>
+<td align="center">
+<a href="https://github.com/MEKSAAA">
+<img src="https://github.com/MEKSAAA.png" width="80" height="80" style="border-radius:50%"><br/>
+<sub><b>Junwen Miao</b></sub>
+</a>
+</td>
+</tr>
+</table>
+
+## 指导老师
+
+<table>
+<tr>
+<td align="center">
+<a href="https://github.com/k-r-allen">
+<img src="https://github.com/k-r-allen.png" width="80" height="80" style="border-radius:50%"><br/>
+<sub><b>Kelsey R. Allen</b></sub>
+</a>
+</td>
+<td align="center">
+<a href="https://github.com/wenhuchen">
+<img src="https://github.com/wenhuchen.png" width="80" height="80" style="border-radius:50%"><br/>
+<sub><b>Wenhu Chen</b></sub>
+</a>
+</td>
+<td align="center">
+<a href="https://github.com/jdf-prog">
+<img src="https://github.com/jdf-prog.png" width="80" height="80" style="border-radius:50%"><br/>
+<sub><b>Dongfu Jiang</b></sub>
+</a>
+</td>
+<td align="center">
+<a href="https://github.com/chenllliang">
+<img src="https://github.com/chenllliang.png" width="80" height="80" style="border-radius:50%"><br/>
+<sub><b>Liang Chen</b></sub>
+</a>
+</td>
+</tr>
+</table>
+
+## Star 历史
+
+<a href="https://star-history.com/#reacher-z/ClawBench&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=reacher-z/ClawBench&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=reacher-z/ClawBench&type=Date" />
+    <img alt="ClawBench Star 历史" src="https://api.star-history.com/svg?repos=reacher-z/ClawBench&type=Date" width="600" />
+  </picture>
+</a>
+
+## 许可证与致谢
+
+Apache 2.0 -- 详见 [LICENSE](LICENSE)。
+
+基于以下开源项目构建: [OpenClaw](https://github.com/openclaw/openclaw), [noVNC](https://github.com/novnc/noVNC) (MPL 2.0), [websockify](https://github.com/novnc/websockify) (LGPL 3.0)。

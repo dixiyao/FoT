@@ -1,0 +1,5 @@
+# Only requirements-sandbox-server.txt and src/claw_eval/sandbox/ are COPYed.
+# Ignore everything else to keep the build context small.
+*
+!requirements-sandbox-server.txt
+!src/claw_eval/sandbox/

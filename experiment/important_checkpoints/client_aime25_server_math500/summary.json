@@ -1,0 +1,11 @@
+{
+  "dataset1_name": null,
+  "dataset2_name": "math500",
+  "num_dataset1_problems": "all",
+  "num_dataset2_problems": 500,
+  "num_correct": 472,
+  "accuracy": 0.944,
+  "total_time_seconds": 43920.955095529556,
+  "encyclopedia_path": "math_output/encyclopedia.txt",
+  "results_path": "math_output/dataset2_results.json"
+}
