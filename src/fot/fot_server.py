@@ -282,12 +282,7 @@ Return JSON only with this shape:
         profiling: dict[str, Any],
         existing_encyclopedia: dict[str, str] | None = None,
     ) -> str:
-        clusters_text = "\n".join(
-            f"- Cluster {cluster.get('cluster_id', '?')} ({cluster.get('cluster_name', 'unnamed')}): "
-            f"{', '.join(cluster.get('traces', []))}"
-            for cluster in profiling.get("clusters", [])
-            if isinstance(cluster, dict)
-        )
+        clusters_text = json.dumps(profiling.get("clusters", []), indent=2, ensure_ascii=False)
         relationships_text = json.dumps(profiling.get("relationships", []), indent=2, ensure_ascii=False)
         all_insights_text = "; ".join(f"{name}: {desc}" for name, desc in insight_store.items())
         current_text = json.dumps(existing_encyclopedia or {}, ensure_ascii=False)
