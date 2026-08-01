@@ -367,7 +367,7 @@ def _extract_json_object(text: str) -> dict[str, Any] | None:
         return None
     normalized: dict[str, Any] = {}
     for key, value in payload.items():
-        if isinstance(value, str):
+            value=str(value)
             normalized[str(key)] = re.sub(r"\s+", " ", value).strip()
     return normalized
 
