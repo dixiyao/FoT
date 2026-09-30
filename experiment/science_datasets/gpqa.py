@@ -84,6 +84,7 @@ def gpqa_formatter(example: Dict[str, Any]) -> Tuple[str, str]:
         # GPQA format: Correct + 3 Incorrect answers
         # Shuffle them deterministically to create A/B/C/D options
         import random
+        import hashlib
 
         correct_ans = example["Correct Answer"]
         incorrect_answers = [
@@ -97,7 +98,7 @@ def gpqa_formatter(example: Dict[str, Any]) -> Tuple[str, str]:
 
         # Create deterministic shuffle based on question text
         shuffled_indices = list(range(4))
-        rng = random.Random(hash(question_text))
+        rng = random.Random(int(hashlib.sha256(question_text.encode("utf-8")).hexdigest()[:16], 16))
         rng.shuffle(shuffled_indices)
 
         # Apply shuffle
